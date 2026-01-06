@@ -57,6 +57,11 @@ public class InterfaceDoUsuario {
 		System.out.println();
 		System.out.println("Turno : " + partidaDeXadrez.getTurno());
 		System.out.println("Aguardando jogador: " + partidaDeXadrez.getJogadorAtual());
+		
+		if (partidaDeXadrez.getCheck()) {
+			System.out.println();
+			System.out.println("VOCE ESTA EM CHECK!");
+		}
 	}
 
 	public static void printTabuleiro(PecaDeXadrez[][] pecas) {
