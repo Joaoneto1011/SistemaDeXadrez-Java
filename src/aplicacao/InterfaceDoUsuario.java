@@ -56,12 +56,20 @@ public class InterfaceDoUsuario {
 		printPecasCapturadas(capturadas);
 		System.out.println();
 		System.out.println("Turno : " + partidaDeXadrez.getTurno());
-		System.out.println("Aguardando jogador: " + partidaDeXadrez.getJogadorAtual());
-		
-		if (partidaDeXadrez.getCheck()) {
-			System.out.println();
-			System.out.println("VOCE ESTA EM CHECK!");
+		if (!partidaDeXadrez.getCheckMate()) {
+			System.out.println("Aguardando jogador: " + partidaDeXadrez.getJogadorAtual());
+			if (partidaDeXadrez.getCheck()) {
+				System.out.println();
+				System.out.println("VOCE ESTA EM CHECK!");
+			}
 		}
+		else {
+			System.out.println();
+			System.out.println("CHECKMATCH!");
+			System.out.println();
+			System.out.println("VENCEDOR: " + partidaDeXadrez.getJogadorAtual());
+		}
+		
 	}
 
 	public static void printTabuleiro(PecaDeXadrez[][] pecas) {
