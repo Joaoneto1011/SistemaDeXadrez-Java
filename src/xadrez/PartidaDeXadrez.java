@@ -1,6 +1,5 @@
 package xadrez;
 
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -100,14 +99,15 @@ public class PartidaDeXadrez {
 		}
 
 		PecaDeXadrez pecaMovida = (PecaDeXadrez) tabuleiro.peca(destino);
-		
+
 		// movimento especial promocao
 		promocao = null;
 		if (pecaMovida instanceof Peao) {
-			
-			if (pecaMovida.getCor() == Cor.BRANCO && destino.getLinha() == 0 || pecaMovida.getCor() == Cor.PRETO && destino.getLinha() == 7) {
-				
-				promocao = (PecaDeXadrez)tabuleiro.peca(destino);
+
+			if (pecaMovida.getCor() == Cor.BRANCO && destino.getLinha() == 0
+					|| pecaMovida.getCor() == Cor.PRETO && destino.getLinha() == 7) {
+
+				promocao = (PecaDeXadrez) tabuleiro.peca(destino);
 				promocao = substituirPecaPromovida("R");
 			}
 		}
@@ -132,34 +132,37 @@ public class PartidaDeXadrez {
 
 		return (PecaDeXadrez) pecaCapturada;
 	}
-	
+
 	public PecaDeXadrez substituirPecaPromovida(String tipo) {
-		
+
 		if (promocao == null) {
 			throw new IllegalStateException("Nao a peca para ser promovida");
 		}
-		
+
 		if (!tipo.equals("B") && !tipo.equals("C") && !tipo.equals("T") && !tipo.equals("R")) {
-			
-			throw new InvalidParameterException("tipo invalido para promocao");
+
+			return promocao;
 		}
-		
+
 		Posicao pos = promocao.getPosicaoXadrez().paraPosicao();
 		Peca p = tabuleiro.removePeca(pos);
 		pecasNoTabuleiro.remove(p);
-		
+
 		PecaDeXadrez novaPeca = novaPeca(tipo, promocao.getCor());
 		tabuleiro.lugarDaPeca(novaPeca, pos);
 		pecasNoTabuleiro.add(novaPeca);
-		
+
 		return novaPeca;
 	}
-	
+
 	private PecaDeXadrez novaPeca(String tipo, Cor cor) {
-		
-		if (tipo.equals("B")) return new Bispo(tabuleiro, cor);
-		if (tipo.equals("C")) return new Cavalo(tabuleiro, cor);
-		if (tipo.equals("R")) return new Rainha(tabuleiro, cor);
+
+		if (tipo.equals("B"))
+			return new Bispo(tabuleiro, cor);
+		if (tipo.equals("C"))
+			return new Cavalo(tabuleiro, cor);
+		if (tipo.equals("R"))
+			return new Rainha(tabuleiro, cor);
 		return new Torre(tabuleiro, cor);
 	}
 
