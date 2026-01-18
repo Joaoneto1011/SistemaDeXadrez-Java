@@ -131,23 +131,17 @@ Jogue diretamente pelo console, seguindo as instruções exibidas.
 
 🧪 Exemplo de Execução (Console)
 
+```text
 8 T C B R K B C T
-
 7 P P P P P P P P
-
 6 - - - - - - - -
-
 5 - - - - - - - -
-
 4 - - - - - - - -
-
 3 - - - - - - - -
-
 2 P P P P P P P P
-
 1 T C B R K B C T
-
   a b c d e f g h
+```
 
 Turno: BRANCO
 Origem: e2
