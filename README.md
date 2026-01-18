@@ -66,12 +66,15 @@ src/
 Cada peça possui sua própria lógica de movimentação, respeitando as regras oficiais do xadrez:
 
 Peça	Representação
-Rei	K
+Rei	   K
 Rainha	R
 Torre	T
 Bispo	B
 Cavalo	C
 Peão	P
+
+---
+
 ⚙️ Funcionalidades
 
 ✅ Movimentação válida de todas as peças
@@ -88,6 +91,8 @@ Peão	P
 
 ✅ Tratamento de exceções específicas do jogo
 
+---
+
 🚨 Tratamento de Exceções
 
 O projeto utiliza exceções personalizadas para garantir robustez:
@@ -97,6 +102,8 @@ ExcecoesTabuleiro
 
 ExcecoesXadrez
 → Erros específicos das regras do xadrez (movimentos inválidos, jogadas ilegais)
+
+---
 
 ▶️ Como Executar o Projeto
 Pré-requisitos
@@ -135,6 +142,8 @@ Jogue diretamente pelo console, seguindo as instruções exibidas.
 Turno: BRANCO
 Origem: e2
 Destino: e4
+
+---
 
 👨‍💻 Autor
 
