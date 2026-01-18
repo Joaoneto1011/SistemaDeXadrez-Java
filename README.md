@@ -66,12 +66,13 @@ src/
 Cada peça possui sua própria lógica de movimentação, respeitando as regras oficiais do xadrez:
 
 Peça	Representação
-Rei	   K
+Rei	    K
 Rainha	R
 Torre	T
 Bispo	B
 Cavalo	C
 Peão	P
+```
 
 ---
 
